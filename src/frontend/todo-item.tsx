@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import classnames from "classnames";
 import { Todo, TodoUpdate } from "../todo";
 import TodoTextInput from "./todo-text-input";
+import styles from './TodoItem.module.css';
 
 export function TodoItem({
   todo,
@@ -45,22 +46,24 @@ export function TodoItem({
     );
   } else {
     element = (
-      <div className="view">
-        <input
-          className="toggle"
-          type="checkbox"
-          checked={todo.completed}
-          onChange={handleToggleComplete}
-        />
-        <input
-          className="toggle-important"
-          type="checkbox"
-          checked={todo.important}
-          onChange={handleToggleImportant}
-        />
-        <label onDoubleClick={handleDoubleClick}>{todo.text}</label>
-        <button className="destroy" onClick={() => onDelete()} />
-      </div>
+      <div className={styles.view}>
+    <div className={styles['checkbox-container']}>
+      <input
+        className={styles.toggle}
+        type="checkbox"
+        checked={todo.completed}
+        onChange={handleToggleComplete}
+      />
+      <input
+        className={styles['toggle-important']}
+        type="checkbox"
+        checked={todo.important}
+        onChange={handleToggleImportant}
+      />
+    </div>
+    <label onDoubleClick={handleDoubleClick}>{todo.text}</label>
+    <button className={styles.destroy} onClick={() => onDelete()} />
+  </div>
     );
   }
 

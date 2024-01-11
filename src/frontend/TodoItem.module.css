@@ -1,0 +1,7 @@
+.checkbox-container {
+  display: flex;
+}
+
+.toggle {
+  margin-right: 10px;
+}
