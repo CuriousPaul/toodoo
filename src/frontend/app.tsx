@@ -24,6 +24,7 @@ const App = ({ rep }: { rep: Replicache<M> }) => {
       id: nanoid(),
       text,
       completed: false,
+      important: false, // Add this line
     });
 
   const handleUpdateTodo = (update: TodoUpdate) =>
