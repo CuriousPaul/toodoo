@@ -17,3 +17,5 @@ tsconfig.tsbuildinfo
 
 lib
 *.orig
+.vercel
+.env*.local
