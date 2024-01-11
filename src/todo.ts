@@ -9,6 +9,7 @@ export type Todo = {
   readonly text: string;
   readonly completed: boolean;
   readonly sort: number;
+  readonly important: boolean; // Add this line
 };
 
 export type TodoUpdate = Partial<Todo> & Pick<Todo, "id">;

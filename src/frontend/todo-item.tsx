@@ -31,6 +31,9 @@ export function TodoItem({
   const handleToggleComplete = () =>
     onUpdate({ id, completed: !todo.completed });
 
+    const handleToggleImportant = () =>
+    onUpdate({ id, important: !todo.important });
+
   let element;
   if (editing) {
     element = (
@@ -48,6 +51,12 @@ export function TodoItem({
           type="checkbox"
           checked={todo.completed}
           onChange={handleToggleComplete}
+        />
+        <input
+          className="toggle-important"
+          type="checkbox"
+          checked={todo.important}
+          onChange={handleToggleImportant}
         />
         <label onDoubleClick={handleDoubleClick}>{todo.text}</label>
         <button className="destroy" onClick={() => onDelete()} />
